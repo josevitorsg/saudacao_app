@@ -10,10 +10,19 @@ function trocar() {
     const dataFormatada = agora.toLocaleDateString("pt-BR", opcoes);
     let minutos = agora.getMinutes().toString().padStart(2, "0");
     let segundos = agora.getSeconds().toString().padStart(2, "0");
+    const diaSemana = agora.getDay();
 
 
     let cor;
     let mensagem;
+    let dia;
+    if (diaSemana >= 1 || diaSemana <=5){
+        dia = "Hoje é dia útil, foco nas atividades!";
+    } else{ 
+
+        dia = "Hoje é fim de semana, aproveite para descansar!";
+
+    }
     if (hora >= 6 && hora < 12) {
         cor = '#FFD700';
         mensagem = "Bom dia!";
@@ -22,7 +31,6 @@ function trocar() {
             "Acorde com determinação, vá dormir com satisfação.",
             "Cada manhã é uma nova oportunidade.",
         ]
-
     } else if (hora >= 12 && hora < 18) {
         cor = '#FF8C00';
         mensagem = "Boa tarde!";
@@ -48,6 +56,7 @@ function trocar() {
 
     document.getElementById("hora").innerHTML = hora + ":" + minutos + ":" + segundos;
     document.getElementById("data").innerHTML = dataFormatada;
+    document.getElementById("diaSemana").innerHTML = dia;
 
 
 
