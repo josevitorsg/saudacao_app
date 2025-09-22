@@ -9,7 +9,7 @@
         font-family: "JetBrains Mono";
         margin: 0;
         padding: 0;
-        min-height: 100vh;
+        min-height: 100dvh;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -62,6 +62,16 @@
           min-width: 180px;
         }
       }
+
+      html,
+      body {
+        overflow-x: hidden;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
     </style>
     <meta name="theme-color" content="#000000" />
 
@@ -112,7 +122,7 @@
             "Cada manhã é uma nova oportunidade.",
           ];
         } else if (hora >= 12 && hora < 18) {
-          background = "url('image/afternoon.jpg')";
+          background = "url('image/afternoon.png')";
           mensagem = "Boa tarde!";
           frase = [
             "Tarde é para quem trabalha.",
